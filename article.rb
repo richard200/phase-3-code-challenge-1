@@ -18,4 +18,8 @@ class Article
         @@all_articles
     end
 
+    def author
+        @author.name
+    end
+
 end
