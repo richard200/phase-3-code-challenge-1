@@ -37,16 +37,6 @@ author_2.add_article(magazine_3, 'How to dress')
 # puts author_1.topic_areas 
 
 
-# require_relative '../article'
-# require_relative '../author'
-# require_relative '../magazine'
-
-# puts "Marvin Magazines"
-
-
-# A prompt for the creation of author
-
-
 
 
 puts "Please enter the author you would like to create: "
@@ -126,14 +116,14 @@ end
 # end
 
 # Finding article titles by magazine name
-puts "Kindly enter name of magazine you would like to find the article titles for:"
-input = gets.chomp
+# puts "Kindly enter name of magazine you would like to find the article titles for:"
+# input = gets.chomp
 
-Magazine.all.each do |magazine|
-  if magazine.name == input
-    puts "article titles: #{magazine.article_titles}"
-  end
-end
+# Magazine.all.each do |magazine|
+#   if magazine.name == input
+#     puts "article titles: #{magazine.article_titles}"
+#   end
+# end
 
 
 
