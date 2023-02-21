@@ -1,3 +1,5 @@
+
+
 class Article
     attr_reader :author, :magazine, :title
 
@@ -10,10 +12,6 @@ class Article
         @@all_articles  << self
     end
 
-    def article_title
-        @title
-    end
-
     def self.all
         @@all_articles
     end
@@ -23,3 +21,7 @@ class Article
     end
 
 end
+
+
+
+

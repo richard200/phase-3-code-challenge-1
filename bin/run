@@ -1,0 +1,147 @@
+
+require_relative "../config/environment"
+
+
+author_1 = Author.new("Richard Ngeti")
+author_2 = Author.new("Childish Gambino")
+author_3 = Author.new("Karl Malone")
+# #Magazines Class
+magazine_1 = Magazine.new("Kenya Kwanza", "Corruption")
+magazine_2 = Magazine.new("Daily Nation", "Love")
+magazine_3 = Magazine.new("Dior", "Fashion")
+magazine_4 = Magazine.new("Taifa Leo", "Technology")
+# #Articles Class
+article_1 = Article.new(author_1, magazine_1, "Corrupt Leadership")
+article_2 = Article.new(author_1, magazine_2, "Relationships")
+article_3 = Article.new(author_2, magazine_1, "Court Corruption")
+article_4 = Article.new(author_2, magazine_2, "Marriage")
+article_5 = Article.new(author_3, magazine_3, "Nike Techs")
+article_6 = Article.new(author_3, magazine_4, "Cyber Security")
+
+author_1.add_article(magazine_1, 'The Downfall of the country due to corrupt leadership')
+author_3.add_article(magazine_2, 'What is Love')
+author_2.add_article(magazine_3, 'How to dress')
+
+# puts author_1.articles
+# puts author_2.articles
+# puts author_3.articles
+
+
+# puts Magazine.all.count
+# puts Article.all.count # 3
+# puts author_1.articles.count # 2
+# puts author_1.magazines.count # 2
+# puts magazine_1.contributing_authors.count # 2
+# puts magazine_1.article_titles 
+# puts magazine_2.article_titles
+# puts author_1.topic_areas 
+
+
+# require_relative '../article'
+# require_relative '../author'
+# require_relative '../magazine'
+
+# puts "Marvin Magazines"
+
+
+# A prompt for the creation of author
+
+
+
+
+puts "Please enter the author you would like to create: "
+
+author_name = gets.chomp
+new_author = Author.new (author_name);
+
+# Creating magazine
+puts "Please enter name of the magazine you would like to create:"
+magazine_name = gets.chomp
+
+#Establishing magazine category
+puts "Please enter the category of the magazine you would like to create:"
+magazine_category = gets.chomp
+
+new_magazine = Magazine.new(magazine_name, magazine_category)
+
+
+# The creation of a new article by user
+puts "Please enter the title of the article you would like to create: "
+article_title = gets.chomp
+
+new_article=Article.new(new_author, new_magazine, article_title)
+
+# Getting all authors
+puts "Please Enter 'authors' to get all authors"
+
+input = gets.chomp
+
+if input == "authors"
+    Author.all.each {|author| puts "Author: #{author.name}"}
+ 
+end
+
+# Getting all magazines
+puts "Kindly enter 'magazines' to get all magazines."
+input = gets.chomp
+
+if input == "magazines"
+    Magazine.all.each{|magazine| puts "magazine name: #{magazine.name}"}
+end
+
+# Getting all articles
+puts "Kindly enter 'articles' to get all articles"
+input = gets.chomp
+
+if input == "articles"
+    Article.all.each{|article| puts "article title: #{article.title}"}
+end
+
+#Getting all categories
+puts "Kindly enter 'category' to get all categories:"
+input = gets.chomp
+
+if input == "category"
+  Magazine.all.each {|magazine| puts "magazine category: #{magazine.category}"}
+end
+
+# Finding magazine by name
+puts "Kindly enter the magazine name you would like to find:"
+input = gets.chomp
+
+Magazine.all.each do |magazine|
+  if magazine.name == input
+    puts "magazine name: #{magazine.name}"
+  end
+end
+
+# # Getting contributing_authors by magazine name
+# puts "Kindly enter  magazine name you would like to find the contributing authors for:"
+# input = gets.chomp
+
+# Magazine.all.each do |magazine|
+#   if magazine.name == input
+#     puts "contributing authors: #{magazine.contributing_authors}"
+#   end
+# end
+
+# Finding article titles by magazine name
+puts "Kindly enter name of magazine you would like to find the article titles for:"
+input = gets.chomp
+
+Magazine.all.each do |magazine|
+  if magazine.name == input
+    puts "article titles: #{magazine.article_titles}"
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
